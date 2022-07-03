@@ -1,0 +1,61 @@
+<!-- 
+    Para eliminar un libro, voy a seleccionar cual quiero eliminar y se va a borrar, para eso, necesito que funciona la barra de busqueda,
+
+    -Agregue un boton para regresar (24)
+ -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ELIMINAR</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <script src="../js/eliminarLibro.js" defer></script>
+        <!-- AQUI SE CAMBIA EL SCRIPT PARA QUE SE USE EL DE ELIMINAR LIBRO -->
+    </head>
+
+  <body>
+    <nav class="navbar">
+        <img src="../img/logo.png" class="brand-logo" alt="" />
+
+        <ul class="nav-links">
+            <li class="nav-items"><a class="active" href="#">LIBRERIA</a></li>
+        </ul>
+
+        <a href="index.html"> <button>Regresar</button> </a>
+
+        <div class="right-container">
+            <input
+                type="text"
+                class="search-box"
+                placeholder="Buscar"
+                id="inputBuscar"
+            />
+            <button onclick="buscarLibros()">Buscar</button>
+            <!-- PAPI AQUI CORRIGE LO DEL BUSCAR, QUE NO SE COMO LO MANEJASTE JAJA -->
+        </div>
+    </nav>
+
+    <section>
+        
+
+        <article id="contenido">
+            <!-- AQUI VAN LOS LIBROS INSERTADOS POR EL SCRIPT -->
+
+
+            <div class="libro">
+                <h3>TITULO LIBRO</h3>
+                <img src="../img/libroPlantilla.jpg">
+                <span>CARRERA</span>
+                <p>EDITORIAL</p>
+                <button onclick="eliminarLibro('TITULO LIBRO')" >ELIMINAR</button>                   
+            </div>
+            
+
+        
+        </article>
+
+
+    </section>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AÑADIR</title>
+    <script src="../js/añadirLibro.js" defer></script>
+
+</head>
+<body>
+
+    <button><a href="index.html"> ATRAS </a></button>
+
+    <section>
+        <legend>Datos del libro:</legend>
+        <label>Nombre del libro</label>
+        <input type="text" id="txtNombre" required>
+        <br/>
+        <label>Editorial:</label>
+        <input type="text" id=txtEditorial required>
+        <br/>
+        <label>Carrera</label>
+        <select id="txtCarrera" required>
+            <option>SOFTWARE</option>
+            <option>AMBIENTAL</option>
+            <option>ENERGIA</option>
+            <option>PYMES</option>
+            <option>INGLES</option>
+        </select>
+        <br/>
+        <label>Ubicacion</label>
+        <input type="text" id="txtUbicacion">
+        <br/>
+        <br/>
+        <button onclick="añadirLibro()"> AÑADIR </button>     
+    </section>
+</body>
+</html>

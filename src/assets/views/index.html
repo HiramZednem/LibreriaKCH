@@ -17,7 +17,6 @@ deje lo esencial para que funcione todo el back. -->
 
         <!-- A CONTINUACIÓN AGRERGO LOS SCRIPTS CON LA PROPIEDAD DEFER QUE HACE QUE CARGUEN AL ULTIMO-->
         <script src="../js/script.js" defer></script>
-        <!-- <script src="../js/crearConexion.js" defer></script> -->
     </head>
 
   <body>
@@ -35,6 +34,8 @@ deje lo esencial para que funcione todo el back. -->
                 placeholder="Buscar"
                 id="inputBuscar"
             />
+            <button onclick="buscarLibros()">Buscar</button>
+            <!-- PAPI AQUI CORRIGE LO DEL BUSCAR, QUE NO SE COMO LO MANEJASTE JAJA -->
         </div>
     </nav>
 
@@ -67,13 +68,13 @@ deje lo esencial para que funcione todo el back. -->
                     <p>HERRAMIENTAS DE ADMINISTRADOR:</p>
                 </li>
                 <li>
-                    <button >AÑADIR</button>
+                    <a href="añadir.html"><button >AÑADIR</button></a>
                 </li>
                 <li>
-                    <button ">ELIMINAR</button>
+                     <a href="eliminar.html"><button ">ELIMINAR</button> </a>
                 </li>
                 <li>
-                    <button ">MODIFICAR</button>
+                    <a href="modificar.html"><button ">MODIFICAR</button> </a>
                 </li>
 
             </ul>
