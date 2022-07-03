@@ -42,23 +42,40 @@ deje lo esencial para que funcione todo el back. -->
         <aside>
             <ul>
                 <li>
-                    <button onclick="ingresarLibros  ( '' )">MOSTRAR TODO</button>
+                    <button onclick="iniciarPrograma  (  )">MOSTRAR TODO</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCategoria( '' )">SOFTWARE</button>
+                    <button onclick="filtrarCarrera( 'SOFTWARE' )">SOFTWARE</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCategoria( '' )">AMBIENTAL</button>
+                    <button onclick="filtrarCarrera( 'AMBIENTAL' )">AMBIENTAL</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCategoria( '' )">ENERGIA</button>
+                    <button onclick="filtrarCarrera( 'ENERGIA' )">ENERGIA</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCategoria( '' )">PYMES</button>
+                    <button onclick="filtrarCarrera( 'PYMES' )">PYMES</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCategoria( '' )">INGLES</button>
+                    <button onclick="filtrarCarrera( 'INGLES' )">INGLES</button>
                 </li>
+
+                <!-- A CONTINUACIÓN COLOCARE LAS FUNCIONES DE ADMINISTRADOR, QUE SE DEBERAN OCULTAR SI EL USUARIO NO ESTA LOGEADO (PUEDE SER PONINEDO UN DIV Y QUE SI ESE DIV TAL HACE TAL, ESA YA ES TU CHAMBA PAPITO)-->
+                <br>
+                <br>
+                <li>
+                    <p>HERRAMIENTAS DE ADMINISTRADOR:</p>
+                </li>
+                <li>
+                    <button >AÑADIR</button>
+                </li>
+                <li>
+                    <button ">ELIMINAR</button>
+                </li>
+                <li>
+                    <button ">MODIFICAR</button>
+                </li>
+
             </ul>
         </aside>
 
@@ -70,13 +87,13 @@ deje lo esencial para que funcione todo el back. -->
         
             <div class="libro">
                 <h3>TITULO LIBRO</h3>
-                <img src="../img/libroPlantilla.jpg" width="100px">
+                <img src="../img/libroPlantilla.jpg">
                 <span>CARRERA</span>
                 <p>EDITORIAL</p>                   
             </div>
             <div class="libro">
                 <h3>TITULO LIBRO</h3>
-                <img src="../img/libroPlantilla.jpg" width="100px">
+                <img src="../img/libroPlantilla.jpg">
                 <span>CARRERA</span>
                 <p>EDITORIAL</p>                   
             </div>
