@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!-- que onda perro, utilice el INDEX de la app de peliculas para hacer todo el back de la pagina,
+sientente en libertad de modificar todo el diseño a tu antojo y modificar todo lo que quieras, basicamente
+deje lo esencial para que funcione todo el back. -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>LIBRERIA</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <!-- 
+            En el archivo de css, hice estas modificaciones:
+            - cambie la altura del aside para que se muestren bonitos las categorias de los libros (195) 
+            - cambie el nombre de clase pelicula a clase libro (160-192)
+        -->
+    </head>
+
+  <body>
+    <nav class="navbar">
+        <img src="../img/logo.png" class="brand-logo" alt="" />
+
+        <ul class="nav-links">
+            <li class="nav-items"><a class="active" href="#">LIBRERIA</a></li>
+        </ul>
+
+        <div class="right-container">
+            <input
+                type="text"
+                class="search-box"
+                placeholder="Buscar"
+                id="inputBuscar"
+            />
+        </div>
+    </nav>
+
+    <section>
+        <aside>
+            <ul>
+                <li>
+                    <button onclick="ingresarLibros  ( '' )">MOSTRAR TODO</button>
+                </li>
+                <li>
+                    <button onclick="filtrarCategoria( '' )">SOFTWARE</button>
+                </li>
+                <li>
+                    <button onclick="filtrarCategoria( '' )">AMBIENTAL</button>
+                </li>
+                <li>
+                    <button onclick="filtrarCategoria( '' )">ENERGIA</button>
+                </li>
+                <li>
+                    <button onclick="filtrarCategoria( '' )">PYMES</button>
+                </li>
+                <li>
+                    <button onclick="filtrarCategoria( '' )">INGLES</button>
+                </li>
+            </ul>
+        </aside>
+
+        <article id="contenido">
+            <!-- AQUI VAN LOS LIBROS INSERTADOS POR EL SCRIPT -->
+
+            
+             <!-- EJEMPLO DE COMO SE INSERTA UN LIBRO -->
+        
+            <div class="libro">
+                <h3>TITULO LIBRO</h3>
+                <img src="../img/libroPlantilla.jpg" width="100px">
+                <span>CARRERA</span>
+                <p>EDITORIAL</p>                   
+            </div>
+            <div class="libro">
+                <h3>TITULO LIBRO</h3>
+                <img src="../img/libroPlantilla.jpg" width="100px">
+                <span>CARRERA</span>
+                <p>EDITORIAL</p>                   
+            </div>
+
+        
+        </article>
+
+
+    </section>
+    <script src="../js/crearConexion.js"></script>
+  </body>
+</html>
