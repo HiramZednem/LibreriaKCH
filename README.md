@@ -1,0 +1,3 @@
+# LibreriaKCH
+Proyecto enfocado a la organización de una libreria. (SOLO BACK)
+PARA QUE FUNCIONE EL PROYECTO HAY QUE INSTALAR EL PARQUETE DE ELECTRON Y EL PAQUETE DE MYSQL2
