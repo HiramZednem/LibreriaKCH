@@ -16,7 +16,9 @@ deje lo esencial para que funcione todo el back. -->
         -->
 
         <!-- A CONTINUACIÓN AGRERGO LOS SCRIPTS CON LA PROPIEDAD DEFER QUE HACE QUE CARGUEN AL ULTIMO-->
-        <script src="../js/script.js" defer></script>
+        <script type="module" src="../js/script.js" defer></script>
+
+        <!-- SE ARGEA EL TIPO MODULO PARA QUE SE PUEDAN IMPORTAR Y EXPORTAR CLASES ADENTRO -->
     </head>
 
   <body>
@@ -34,8 +36,8 @@ deje lo esencial para que funcione todo el back. -->
                 placeholder="Buscar"
                 id="inputBuscar"
             />
-            <button onclick="buscarLibros()">Buscar</button>
-            <!-- PAPI AQUI CORRIGE LO DEL BUSCAR, QUE NO SE COMO LO MANEJASTE JAJA -->
+            <button id="btnBuscar">Buscar</button>
+            <!-- wey como se esta trabajando con modulos, a huevo tienes que trabajar con una referencia html . add eventListener -->
         </div>
     </nav>
 
@@ -43,22 +45,22 @@ deje lo esencial para que funcione todo el back. -->
         <aside>
             <ul>
                 <li>
-                    <button onclick="iniciarPrograma  (  )">MOSTRAR TODO</button>
+                    <button id="btnMostrarTodo"">MOSTRAR TODO</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCarrera( 'SOFTWARE' )">SOFTWARE</button>
+                    <button id="btnSoftware">SOFTWARE</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCarrera( 'AMBIENTAL' )">AMBIENTAL</button>
+                    <button id="btnAmbiental">AMBIENTAL</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCarrera( 'ENERGIA' )">ENERGIA</button>
+                    <button id="btnEnergia">ENERGIA</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCarrera( 'PYMES' )">PYMES</button>
+                    <button id="btnPymes">PYMES</button>
                 </li>
                 <li>
-                    <button onclick="filtrarCarrera( 'INGLES' )">INGLES</button>
+                    <button id="btnIngles">INGLES</button>
                 </li>
 
                 <!-- A CONTINUACIÓN COLOCARE LAS FUNCIONES DE ADMINISTRADOR, QUE SE DEBERAN OCULTAR SI EL USUARIO NO ESTA LOGEADO (PUEDE SER PONINEDO UN DIV Y QUE SI ESE DIV TAL HACE TAL, ESA YA ES TU CHAMBA PAPITO)-->

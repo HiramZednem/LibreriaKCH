@@ -10,21 +10,25 @@
 const connection = require('../js/crearConexion');
 
 //REFERENCIAS HTML
-const article     = document.querySelector('#contenido');
-const inputBuscar = document.querySelector('#inputBuscar');
+const article        = document.querySelector('#contenido');
+const inputBuscar    = document.querySelector('#inputBuscar');
+const btnMostrarTodo = document.getElementById('btnMostrarTodo');
+const btnSoftware    = document.getElementById('btnSoftware');
+const btnAmbiental   = document.getElementById('btnAmbiental');
+const btnEnergia     = document.getElementById('btnEnergia');
+const btnPymes       = document.getElementById('btnPymes');
+const btnIngles      = document.getElementById('btnIngles');
+
+
+//EXPORTS 
+import { ordenamientoArbol } from './TreeSet.js';
 
 
 const mostrarLibros = ( libros ) =>{
-  //La funcion "mostrarLibros" recibe un arreglo de libros y agrega todos los libros sin ordenar al programa, lo que hay que implementar aqui a futuro, es el ordenamiento de mis libros por medio de un arbol(Se puede hacer por SQL, pero se pide en la rubrica de trabajo la implementación de un arbol)
-
-    //primero borra los datos que tengamos en nuestro article, para evitar cualquier problema
+  
     article.innerHTML = "";
-    /*
-        Ejemplo de como seria en un futuro:
-        let datosOrdenados = arbol.inOrden( _.shuffle(libros) ); 
 
-        Y el for se trabajaria con "datosOrdenados", no con "libros"
-      */
+    libros = ordenamientoArbol( libros );
     
     for (let i = 0; i < libros.length; i++) {
         let texto =
@@ -60,10 +64,10 @@ const buscarLibros = () => {
 
   //SACO TODOS MIS LIBROS
   connection.query( 'SELECT * FROM `LIBRO`', (err, libros, fields) => {
+    libros = ordenamientoArbol( libros );
     for (let i = 0; i < libros.length; i++) {
         let texto = '';
         if (libros[i].NOMBRE.toLowerCase().search(textoBuscar.toLowerCase()) != -1) {
-          console.log("si");
 
           let texto =
           `
@@ -92,3 +96,27 @@ const iniciarPrograma = () => {
 }
 //Se manda a llamar a la funcion iniciarPrograma() para dar comienzo a la pagina
 iniciarPrograma();
+
+
+//EVENT LISTENERS
+btnBuscar.addEventListener('click', () => {
+  buscarLibros();
+});
+btnMostrarTodo.addEventListener('click' , () =>{
+  iniciarPrograma  (  );
+})
+btnSoftware.addEventListener('click' , () =>{
+  filtrarCarrera( 'SOFTWARE' );
+})
+btnAmbiental.addEventListener('click' , () =>{
+  filtrarCarrera( 'AMBIENTAL' );
+})
+btnEnergia.addEventListener('click' , () =>{
+  filtrarCarrera( 'ENERGIA' );
+})
+btnPymes.addEventListener('click' , () =>{
+  filtrarCarrera( 'PYMES' );
+})
+btnIngles.addEventListener('click' , () =>{
+  filtrarCarrera( 'INGLES' );
+})

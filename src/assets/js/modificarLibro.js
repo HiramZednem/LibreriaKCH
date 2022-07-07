@@ -34,7 +34,7 @@ const buscarLibros = () => {
   //Aqui añado el boton con la funcion modificarLibro() que nos ayuda a borrar todo lo del html y poder añadir las cosas.
   let textoBuscar = inputBuscar.value;
   article.innerHTML = "";
-  connection.query( 'SELECT * FROM `LIBRO`', (err, libros, fields) => {
+  connection.query( 'SELECT * FROM `LIBRO` ORDER BY NOMBRE', (err, libros, fields) => {
     for (let i = 0; i < libros.length; i++) {
         let texto = '';
         if (libros[i].NOMBRE.toLowerCase().search(textoBuscar.toLowerCase()) != -1) {
@@ -144,7 +144,7 @@ const modificarLibro = ( idModificar ) => {
 
 
 const iniciarPrograma = () => {
-  connection.query( 'SELECT * FROM `LIBRO`', (err, results, fields) => {
+  connection.query( 'SELECT * FROM `LIBRO` ORDER BY NOMBRE', (err, results, fields) => {
     mostrarLibros(results);
   }
 );
