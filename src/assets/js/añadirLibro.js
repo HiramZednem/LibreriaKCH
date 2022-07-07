@@ -17,7 +17,8 @@ const añadirLibro = () =>{
     console.log(ubicacion);
 
     if (  !(nombre == '' || editorial == '' || carrera == '' || ubicacion == '') ) {
-        connection.query(`INSERT INTO LIBRO VALUES ("${nombre}","${carrera}","${editorial}","${ubicacion}");`, (err) => {
+        //SE ACTUALIZO LA SENTENCIA SQL YA QUE SE AGREGO UNA ID
+        connection.query(`INSERT INTO LIBRO (NOMBRE, CARRERA, EDITORIAL, UBICACION) VALUES ("${nombre}","${carrera}","${editorial}","${ubicacion}");`, (err) => {
             if ( err ){
                 console.log("No se pudieron agregar los datos");
                 console.log(err);

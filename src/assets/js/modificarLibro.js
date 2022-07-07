@@ -22,10 +22,10 @@ const mostrarLibros = ( libros ) =>{
                 <span>Carrera: ${libros[i].CARRERA}</span>
                 <span>Ubicacion: ${libros[i].UBICACION}</span>                     
                 <span>Editorial: ${libros[i].EDITORIAL}</span>
-                <button onclick="modificarLibro('${libros[i].NOMBRE}')" >MODIFICAR</button>   
+                <button onclick="modificarLibro('${libros[i].ID}')" >MODIFICAR</button>   
             </div>
         `;
-
+        //SE CAMBIO LA CONDICION DE ELIMINACIÓN (25) POR EL ID
         article.innerHTML += texto;
     }
 }
@@ -48,9 +48,10 @@ const buscarLibros = () => {
             <span>Carrera: ${libros[i].CARRERA}</span>
             <span>Ubicacion: ${libros[i].UBICACION}</span>                     
             <span>Editorial: ${libros[i].EDITORIAL}</span>
-            <button onclick="modificarLibro('${libros[i].NOMBRE}')" >MODIFICAR</button>   
+            <button onclick="modificarLibro('${libros[i].ID}')" >MODIFICAR</button>   
         </div>
         `;
+        //SE CAMBIO LA CONDICION DE ELIMINACIÓN (51) POR EL ID
 
             article.innerHTML += texto;
         }
@@ -102,7 +103,7 @@ const añadirHTML = () =>{
 }
 
 
-const modificarLibro = ( nombreModificar ) => {
+const modificarLibro = ( idModificar ) => {
   html.innerHTML = "";  
   añadirHTML();
   
@@ -122,7 +123,8 @@ const modificarLibro = ( nombreModificar ) => {
     
     if (  !(nombre == '' || editorial == '' || carrera == '' || ubicacion == '') ) {
       //AQUI ESTA LA SENTENCIA UPDATE
-      connection.query(`UPDATE LIBRO SET NOMBRE = "${nombre}", CARRERA="${carrera}", EDITORIAL ="${editorial}", UBICACION="${ubicacion}" WHERE NOMBRE = "${nombreModificar}";`, (err) => {
+      connection.query(`UPDATE LIBRO SET NOMBRE = "${nombre}", CARRERA="${carrera}", EDITORIAL ="${editorial}", UBICACION="${ubicacion}" WHERE ID = "${idModificar}";`, (err) => {
+        //SE CAMBIO LA CONDICION DE ELIMINACIÓN en el query (126) POR EL ID
         if ( err ){
           console.log("No se pudieron modificar los datos");
           console.log(err);

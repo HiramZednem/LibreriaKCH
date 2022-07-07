@@ -21,7 +21,7 @@ const mostrarLibros = ( libros ) =>{
     article.innerHTML = "";
     /*
         Ejemplo de como seria en un futuro:
-        let datosOrdenados = arbol.inOrden( libros ); 
+        let datosOrdenados = arbol.inOrden( _.shuffle(libros) ); 
 
         Y el for se trabajaria con "datosOrdenados", no con "libros"
       */

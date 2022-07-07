@@ -21,9 +21,10 @@ const mostrarLibros = ( libros ) =>{
                 <span>Carrera: ${libros[i].CARRERA}</span>
                 <span>Ubicacion: ${libros[i].UBICACION}</span>                     
                 <span>Editorial: ${libros[i].EDITORIAL}</span>
-                <button onclick="eliminarLibro('${libros[i].NOMBRE}')" >ELIMINAR</button>   
+                <button onclick="eliminarLibro('${libros[i].ID}')" >ELIMINAR</button>   
             </div>
         `;
+        //SE CAMBIO LA CONDICION DE ELIMINACIÓN (24) POR EL ID
 
         article.innerHTML += texto;
     }
@@ -50,9 +51,10 @@ const buscarLibros = () => {
             <span>Carrera: ${libros[i].CARRERA}</span>
             <span>Ubicacion: ${libros[i].UBICACION}</span>                     
             <span>Editorial: ${libros[i].EDITORIAL}</span>
-            <button onclick="eliminarLibro('${libros[i].NOMBRE}')" >ELIMINAR</button>   
+            <button onclick="eliminarLibro('${libros[i].ID}')" >ELIMINAR</button>   
         </div>
         `;
+         //SE CAMBIO LA CONDICION DE ELIMINACIÓN (54) POR EL ID
 
             article.innerHTML += texto;
         }
@@ -69,8 +71,9 @@ const iniciarPrograma = () => {
 );
 }
 
-const eliminarLibro = ( nombre ) => {
-    connection.query(`DELETE FROM LIBRO WHERE NOMBRE="${ nombre }";`, (err) => {
+const eliminarLibro = ( id ) => {
+  //SE CAMBIO LA ELIMINACIÓN POR ID
+    connection.query(`DELETE FROM LIBRO WHERE ID="${ id }";`, (err) => {
         if ( err ){
             console.log("No se pudo borrar el libro");
             console.log(err);
