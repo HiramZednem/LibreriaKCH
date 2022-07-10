@@ -21,7 +21,7 @@ const btnIngles      = document.getElementById('btnIngles');
 
 
 //EXPORTS 
-import { ordenamientoArbol } from './TreeSet.js';
+import { ordenamientoArbol, filtrarArbol } from './MetodosTree.js';
 
 
 const mostrarLibros = ( libros ) =>{
@@ -48,11 +48,9 @@ const mostrarLibros = ( libros ) =>{
 const filtrarCarrera = ( CARRERA ) => {
   //La funcion "filtrarCarrera" recibe la CARRERA y hace un select de los libros con esa carrera y lo envia a "mostrarLibros"
     connection.query(
-        `SELECT * FROM LIBRO WHERE CARRERA = "${CARRERA}"; `,
-        function(err, results, fields) {
-            console.log(err);
-            console.log(results);
-            mostrarLibros(results);
+        `SELECT * FROM LIBRO; `,
+        function(err, results, fields) {  
+            mostrarLibros( filtrarArbol( results, CARRERA ) );
         }
       );
 }
